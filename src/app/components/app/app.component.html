@@ -1,0 +1,58 @@
+<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>
+<md-sidenav-layout>
+  <md-sidenav #start>
+    <span style="width: 200px">Start Sidenav.</span>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    Store-App
+    <span *ngIf="(authStatus | async) ===0" style="color: lightgreen">Logging in...</span>
+    <span *ngIf="(authStatus | async) ===1" style="color: lightgreen">
+      <button md-icon-button [md-menu-trigger-for]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+      Logged in
+    </span>
+    <button md-button (click)="login()"
+            *ngIf="(authStatus | async) ===2"
+            style="color: white">
+      Google Login
+    </button>
+    <span *ngIf="(authStatus | async) ===3"
+          style="color: red">
+      Logging out...
+    </span>
+    <button md-button (click)="login()"
+            *ngIf="(authStatus | async) ===4"
+            style="color: white">
+      Google Login
+    </button>
+    <button md-button (click)="login()"
+            *ngIf="(authStatus | async) ===5"
+            style="color: white">
+      Google Login
+    </button>
+  </md-toolbar>
+  <md-progress-bar mode="indeterminate"
+                   *ngIf="this.loading | async"
+                   color="warn"></md-progress-bar>
+  <md-tab-group (selectChange)="navigate($event)">
+    <md-tab>
+      <template md-tab-label><md-icon>home</md-icon></template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label><md-icon>shopping_basket</md-icon></template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label><md-icon>shopping_cart</md-icon>{{ shoppingCartAmount$ | async}}</template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label><md-icon>account_circle</md-icon></template>
+    </md-tab>
+  </md-tab-group>
+  <router-outlet style="padding: 10px"></router-outlet>
+</md-sidenav-layout>
+<md-menu #menu="mdMenu">
+  <button md-menu-item (click)="navigateProfile()"> Profile </button>
+  <button md-menu-item (click)="logout()"> Logout </button>
+</md-menu>

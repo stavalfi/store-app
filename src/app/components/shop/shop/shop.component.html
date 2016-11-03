@@ -1,0 +1,20 @@
+<categories id="categoriesContainer"
+            (onCategoryChanged)="categoryChanged($event)"></categories>
+<div id="products-container">
+  <product-from-shop *ngFor="let product of products$ | async" id="prodcut"
+                     [amITheProductSupplier]="amITheProductSupplier(product.$key) | async"
+                     [isInsideShoppingCart]="isProductInsideShoppingCart$(product.$key) | async"
+                     [product]="product"
+                     (onRemoveProductFromShop)="removeProductFromShop(product.$key)"
+                     (onAddToCart)="addToCart($event)"></product-from-shop>
+  <button md-icon-button *ngIf="!showCreateProductComponent"
+          id="create-product-button"
+          [disabled]="disableCreateProductButton$ | async"
+          (click)="showCreateProductComponent=true">
+    <md-icon>add</md-icon>
+  </button>
+  <create-product id="create-product"
+                  (onCencel)="showCreateProductComponent=false"
+                  (onCreateProduct)="onCreateProduct($event)"
+                  *ngIf="showCreateProductComponent"></create-product>
+</div>

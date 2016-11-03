@@ -1,0 +1,37 @@
+<md-card style="width: 400px;">
+  <md-card-title-group>
+    <img md-card-sm-image [src]="imageUrl.value">
+    <md-card-title>
+      <md-input placeholder="Product name"
+                [dividerColor]="primary"
+                maxlength="15" #name>
+        <md-hint align="end">{{name.value.length}} / 15</md-hint>
+      </md-input>
+    </md-card-title>
+    <md-card-subtitle>
+      <md-input placeholder="Product image"
+                [dividerColor]="primary"
+                #imageUrl>
+      </md-input>
+      <md-input placeholder="Product prise"
+                [dividerColor]="primary"
+                #price>
+        <span md-prefix>$&nbsp;</span>
+      </md-input>
+      <br>
+      <md-input placeholder="More details"
+                class="demo-full-width"
+                [dividerColor]="primary"
+                #details>
+        <md-hint align="end">{{details.value.length}} / 30</md-hint>
+      </md-input>
+    </md-card-subtitle>
+  </md-card-title-group>
+  <md-card-actions>
+    <p *ngIf="error!=null" style="color: red">
+      {{error}}
+    </p>
+    <button md-button (click)="createProduct(name.value,details.value,imageUrl.value,price.value)">Create</button>
+    <button md-button (click)="cencel()">Cencel</button>
+  </md-card-actions>
+</md-card>

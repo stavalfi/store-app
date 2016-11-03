@@ -1,0 +1,15 @@
+*
+{
+  box-sizing:border-box;
+}
+
+#menu
+{
+  width: 15%;
+  float: left;
+}
+#content
+{
+  width: 85%;
+  float: left;
+}

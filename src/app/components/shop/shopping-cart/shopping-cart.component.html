@@ -1,0 +1,12 @@
+<product-from-cart id="product"
+  *ngFor="let product of cartProducts$ | async"
+  [productAmountFromCart]="productAmountFromCart$(product.$key) | async"
+  [product]="product"
+  (onRemoveFromCart)="removeProduct(product.$key)">
+</product-from-cart>
+
+
+
+
+
+

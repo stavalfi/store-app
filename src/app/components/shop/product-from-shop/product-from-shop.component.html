@@ -1,0 +1,22 @@
+<md-card style="width: 170px;height: 130px">
+  <md-card-title-group>
+    <img md-card-sm-image [src]="product.imageUrl">
+    <md-card-title>{{ product.name}}</md-card-title>
+    <md-card-subtitle>
+      {{ product.details }}
+      <br>
+      price: {{ product.price }}
+      <button md-icon-button
+              (click)="addToCart()">
+        <md-icon *ngIf="isInsideShoppingCart"
+                 style="color: blue">add_shopping_cart</md-icon>
+        <md-icon *ngIf="!isInsideShoppingCart">add_shopping_cart</md-icon>
+      </button>
+      <button md-icon-button
+              (click)="removeProductFromShop()"
+              *ngIf="amITheProductSupplier">
+        <md-icon>delete</md-icon>
+      </button>
+    </md-card-subtitle>
+  </md-card-title-group>
+</md-card>

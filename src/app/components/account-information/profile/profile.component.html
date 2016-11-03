@@ -1,0 +1,32 @@
+<md-card *ngIf="user!=null" style="margin: 20px;width: 300px">
+  <md-card-header>
+    <img md-card-avatar [src]="user.imageUrl">
+    <md-card-title>{{user.firstName + " "+ user.lastName}}</md-card-title>
+    <md-card-subtitle>{{ user.email}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <md-input placeholder="First name"
+              maxlength="15"
+              [value]="user.firstName"
+              #firstName>
+      <md-hint align="end">{{firstName.characterCount}} / 15</md-hint>
+    </md-input>
+    <md-input placeholder="Last name"
+              maxlength="20"
+              [value]="user.lastName"
+              #lastName>
+      <md-hint align="end">{{lastName.characterCount}} / 20</md-hint>
+    </md-input>
+    <md-input placeholder="Image URL"
+              style="width: 300px"
+              [value]="user.imageUrl"
+              #imageURL>
+    </md-input>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="updateUserDetails(firstName.value,lastName.value,imageURL.value)">Update</button>
+  </md-card-actions>
+</md-card>
+<div *ngIf="user==null">
+  something is broken! user is null :(
+</div>

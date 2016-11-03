@@ -1,0 +1,14 @@
+<md-card style="width: 200px;height: 100px">
+  <md-card-title-group>
+    <img md-card-sm-image [src]="product.imageUrl">
+    <md-card-title>{{ product.name}}</md-card-title>
+    <md-card-subtitle>
+      {{productAmountFromCart}}
+      <br>
+      price: {{ product.price }}
+      <button md-icon-button (click)="removeFromCart()">
+        <md-icon style="color:blue">remove_shopping_cart</md-icon>
+      </button>
+    </md-card-subtitle>
+  </md-card-title-group>
+</md-card>

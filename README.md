@@ -1,8 +1,8 @@
-## Angular 2 Playground App
+Angular 2 Playground App
 
-# LIVE: https://stavalfi-store-app.firebaseapp.com/shop
+LIVE: https://stavalfi-store-app.firebaseapp.com/shop
 
-# Angular2, Redux (ngrx), Rxjs, Firebase and Angular materials2
+Angular2, Redux (ngrx), Rxjs, Firebase and Angular materials2
 
 
 

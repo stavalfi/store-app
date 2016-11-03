@@ -1,10 +1,10 @@
-## Angular 2 Play
+## Angular 2 Playground App
 
-LIVE DEMO: [https://ng2play.azurewebsites.net](https://ng2play.azurewebsites.net)
+LIVE DEMO: https://stavalfi-store-app.firebaseapp.com/shop
 
-This repo uses Angular 2.0.2 Material 2 Alpha 9 and is hosted with Webpack using [Angular CLI](https://github.com/angular/angular-cli).
+## Angular2, Redux (ngrx), Rxjs, Firebase and Angular materials2
 
-<img src="screenshots/readme-screen.png" border="0" />
+
 
 Run the following commands to run the application
 
